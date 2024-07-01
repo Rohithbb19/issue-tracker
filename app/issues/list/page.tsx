@@ -4,6 +4,7 @@ import IssuesAction from "./IssuesAction";
 import Pagination from "@/app/components/Pagination";
 import IssueTable, { columnName, IssueQuery } from "./IssueTable";
 import { Flex } from "@radix-ui/themes";
+import { Metadata } from "next";
 
 interface Props {
   searchParams: IssueQuery;
@@ -48,5 +49,10 @@ async function IssuesPage({ searchParams }: Props) {
 }
 
 export const dynamic = "force-dynamic";
+
+export const metadata:Metadata={
+  title:"Issue tracker - Issue List",
+  description:"view all project issues"
+};
 
 export default IssuesPage;
