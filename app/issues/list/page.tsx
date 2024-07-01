@@ -9,7 +9,8 @@ import { ArrowUpIcon } from "@radix-ui/react-icons";
 interface Props{
   searchParams:{
     status:Status,
-    orderBy: keyof Issue
+    orderBy: keyof Issue,
+    sort : "asc"|"desc",
   }
 }
 
@@ -28,11 +29,17 @@ async function IssuesPage({searchParams,}:Props) {
   const statuses = Object.values(Status)
   const status = statuses.includes(searchParams.status) ? searchParams.status : undefined;
   
+  const sortBy = searchParams.sort === "asc" ? "desc" :"asc"
+  
+  const orderBy = columns.map(columns=>columns.value).includes(searchParams.orderBy) && sortBy
+  ?{[searchParams.orderBy]:sortBy} : undefined
+
   
   const issues = await prisma.issue.findMany({
     where:{
       status
-    }
+    },
+    orderBy
   });
 
   return (
@@ -44,9 +51,9 @@ async function IssuesPage({searchParams,}:Props) {
             {columns.map(column=>(
               <Table.ColumnHeaderCell key={column.value} className={column.className}>
                 <NextLink href={{
-                  query:{...searchParams,orderBy:column.value}
+                  query:{...searchParams,orderBy:column.value,sort:sortBy}
                 }}>{column.label}</NextLink>
-                {column.value===searchParams.orderBy && <ArrowUpIcon className="inline"/>}
+                {column.value===searchParams.orderBy &&  <ArrowUpIcon className={`duration-300 ${searchParams.sort === "desc" ? "rotate-180": ""} inline`}/>}
                 </Table.ColumnHeaderCell>
             ))}
           </Table.Row>
