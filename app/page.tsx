@@ -6,6 +6,8 @@ import { Flex, Grid } from '@radix-ui/themes'
 import { Metadata } from 'next'
 
 export const fetchCache = 'force-no-store';
+export const runtime = "edge";
+export const revalidate = 0;
 
 export default async function Home({searchParams}:{searchParams:{page:string}}) {
 
