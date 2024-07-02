@@ -1,3 +1,4 @@
+export const fetchCache = 'force-no-store';
 import { prisma } from '@/prisma/client'
 import IssueSummary from './IssueSummary'
 import LatestIssues from './LatestIssues'

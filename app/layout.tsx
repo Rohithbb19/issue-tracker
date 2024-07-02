@@ -1,3 +1,4 @@
+export const fetchCache = 'force-no-store';
 import "@radix-ui/themes/styles.css";
 import "./my-styles.css";
 import "./globals.css";

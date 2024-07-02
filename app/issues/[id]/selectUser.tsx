@@ -1,5 +1,4 @@
 "use client";
-export const fetchCache = 'force-no-store';
 import { Skeleton } from "@/app/components";
 import { Issue, User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
