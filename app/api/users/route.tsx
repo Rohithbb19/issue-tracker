@@ -2,7 +2,6 @@ import { prisma } from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
 export const fetchCache = 'force-no-store';
-export const runtime = "edge";
 export const revalidate = 0;
 
 export async function GET(request:NextRequest){

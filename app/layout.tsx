@@ -9,7 +9,6 @@ import AuthProvider from "./auth/Provider";
 import QueryClientProvider from "./QueryClientProvider";
 
 export const fetchCache = 'force-no-store';
-export const runtime = "edge";
 export const revalidate = 0;
 
 const inter = Inter({

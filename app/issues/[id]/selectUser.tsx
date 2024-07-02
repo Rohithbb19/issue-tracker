@@ -7,7 +7,6 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
 export const fetchCache = 'force-no-store';
-export const runtime = "edge";
 export const revalidate = 0;
 
 function SelectUser({ issue }: { issue: Issue }) {
