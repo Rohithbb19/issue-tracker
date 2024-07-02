@@ -54,6 +54,9 @@ const useUsers = () =>
     queryKey: ["users"],
     queryFn: () => axios.get<User[]>("/api/users").then((res) => res.data),
     retry: 3,
+
   });
+
+export const fetchCache = 'force-no-store';
 
 export default SelectUser;
