@@ -6,6 +6,8 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 
+export const fetchCache = 'force-no-store';
+
 function SelectUser({ issue }: { issue: Issue }) {
   const { data: users, error, isLoading } = useUsers();
 

@@ -1,4 +1,3 @@
-export const fetchCache = 'force-no-store';
 import "@radix-ui/themes/styles.css";
 import "./my-styles.css";
 import "./globals.css";
@@ -8,6 +7,8 @@ import NavBar from "./NavBar";
 import { Container, Theme } from "@radix-ui/themes";
 import AuthProvider from "./auth/Provider";
 import QueryClientProvider from "./QueryClientProvider";
+
+export const fetchCache = 'force-no-store';
 
 const inter = Inter({
   subsets: ["latin"],
